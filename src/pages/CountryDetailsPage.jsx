@@ -58,11 +58,11 @@ function CountryDetails() {
             <td>Borders</td>
             <td>
               <ul>
-                <li>
+                <li style={{ listStyle: "none" }}>
                   {countryDetails.borders.map((eachBorder) => {
                     return (
                       <li key={eachBorder}>
-                        <Link to={`/${eachBorder}`}>{eachBorder}</Link>;
+                        <Link to={`/${eachBorder}`}>{eachBorder}</Link>
                       </li>
                     );
                   })}
