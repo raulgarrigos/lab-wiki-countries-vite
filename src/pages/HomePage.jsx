@@ -29,16 +29,19 @@ function HomePage() {
   }
 
   return (
-    <div>
+    <div className="container" style={{ maxHeight: "90vh" }}>
       <h1 style={{ fontSize: "24px" }}>
         WikiCountries: Your Guide to the World
       </h1>
 
-      <div>
+      <div className="list-group">
         {countriesList.map((eachCountry) => {
           return (
             <p key={eachCountry._id}>
-              <Link to={`/${eachCountry.alpha3Code}`}>
+              <Link
+                to={`/${eachCountry.alpha3Code}`}
+                className="list-group-item list-group-item-action"
+              >
                 <img
                   src={`https://flagpedia.net/data/flags/icon/72x54/${eachCountry.alpha2Code.toLowerCase()}.png`}
                   alt={eachCountry.name.common}

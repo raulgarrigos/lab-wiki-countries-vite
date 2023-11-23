@@ -7,7 +7,13 @@ import Navbar from "./components/Navbar";
 function App() {
   return (
     <div className="App">
-      <Navbar />
+      <nav className="navbar navbar-dark bg-primary mb-3">
+        <div className="container">
+          <a className="navbar-brand" href="/">
+            <Navbar />
+          </a>
+        </div>
+      </nav>
 
       <Routes>
         <Route path={"/"} element={<HomePage />} />

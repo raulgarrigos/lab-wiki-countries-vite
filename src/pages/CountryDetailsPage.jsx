@@ -32,28 +32,46 @@ function CountryDetails() {
   }
 
   return (
-    <div>
-      <h3>Country Details</h3>
+    <div className="container">
+      <p style={{ fontSize: 24, fontWeight: "bold" }}>Country Details</p>
 
-      <div>
-        <h5>{countryDetails.name.common}</h5>
-        <img
-          src={`https://flagpedia.net/data/flags/icon/72x54/${countryDetails.alpha2Code.toLowerCase()}.png`}
-          alt={countryDetails.name.common}
-        />
-        <p>Capital: {countryDetails.capital}</p>
-        <p>
-          Borders:
-          {countryDetails.borders.map((eachBorder) => {
-            return (
-              <li key={eachBorder}>
-                <Link to={`/${eachBorder}`}>{eachBorder}</Link>;
-              </li>
-            );
-          })}
-        </p>
-        <p>Area: {countryDetails.area} km² </p>
-      </div>
+      <img
+        src={`https://flagpedia.net/data/flags/icon/72x54/${countryDetails.alpha2Code.toLowerCase()}.png`}
+        alt={countryDetails.name.common}
+      />
+      <h1>{countryDetails.name.common}</h1>
+
+      <table className="table">
+        <thead></thead>
+        <tbody>
+          <tr>
+            <td style={{ width: "30%" }}>Capital</td>
+            <td>{countryDetails.capital}</td>
+          </tr>
+          <tr>
+            <td>Area</td>
+            <td>
+              {countryDetails.area} km<sup>2</sup>
+            </td>
+          </tr>
+          <tr>
+            <td>Borders</td>
+            <td>
+              <ul>
+                <li>
+                  {countryDetails.borders.map((eachBorder) => {
+                    return (
+                      <li key={eachBorder}>
+                        <Link to={`/${eachBorder}`}>{eachBorder}</Link>;
+                      </li>
+                    );
+                  })}
+                </li>
+              </ul>
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   );
 }
