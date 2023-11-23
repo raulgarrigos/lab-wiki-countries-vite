@@ -39,7 +39,13 @@ function HomePage() {
           return (
             <p key={eachCountry._id}>
               <Link to={`/${eachCountry.alpha3Code}`}>
-                {eachCountry.name.common}
+                <img
+                  src={`https://flagpedia.net/data/flags/icon/72x54/${eachCountry.alpha2Code.toLowerCase()}.png`}
+                  alt={eachCountry.name.common}
+                  width={25}
+                />{" "}
+                <br />
+                {eachCountry.name.common}{" "}
               </Link>
             </p>
           );
